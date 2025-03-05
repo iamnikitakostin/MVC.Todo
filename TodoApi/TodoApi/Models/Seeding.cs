@@ -16,22 +16,46 @@ public class Seeding
                 new Todo
                 {
                     Name = "Throw out garbage",
-                    IsCompleted = false
+                    IsCompleted = false,
+                    Category = "Life",
+                    IsReccuring = false,
+                    ReccuringFrequencyInDays = 0,
+                    DateCreated = DateTime.Now,
+                    DateDeadline = DateTime.Now.AddDays(3),
+                    Priority = 2
                 },
                 new Todo
                 {
                     Name = "Buy eggs",
-                    IsCompleted = false
+                    IsCompleted = false,
+                    Category = "Life",
+                    IsReccuring = false,
+                    ReccuringFrequencyInDays = 0,
+                    DateCreated = DateTime.Now,
+                    DateDeadline = DateTime.Now.AddDays(3),
+                    Priority = 2
                 },
                 new Todo
                 {
                     Name = "Finish the project",
-                    IsCompleted = true
+                    IsCompleted = true,
+                    Category = "Job",
+                    IsReccuring = false,
+                    ReccuringFrequencyInDays = 0,
+                    DateCreated = DateTime.Now,
+                    DateDeadline = DateTime.Now.AddDays(3),
+                    Priority = 3
                 },
                 new Todo
                 {
                     Name = "Send email",
-                    IsCompleted = false
+                    IsCompleted = false,
+                    Category = "Job",
+                    IsReccuring = false,
+                    ReccuringFrequencyInDays = 0,
+                    DateCreated = DateTime.Now,
+                    DateDeadline = DateTime.Now.AddDays(3),
+                    Priority = 3
                 }
             );
             context.SaveChanges();
