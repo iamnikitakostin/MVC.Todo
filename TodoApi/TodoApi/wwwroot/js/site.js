@@ -202,3 +202,4 @@ function _displayItems(data) {
 }
 
 document.getElementById("edit-due-date").setAttribute("min", new Date().toISOString().split("T")[0]);
+document.getElementById("add-due-date").setAttribute("min", new Date().toISOString().split("T")[0]);
