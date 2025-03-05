@@ -8,6 +8,7 @@ This is a simple To-Do CRUD (Create, Read, Update, Delete) Application built wit
 🚀 Features
 
 ✅ Add, Edit, Delete To-Do Items
+
 ✅ Mark Tasks as Complete
 ✅ Set Task Priority
 ✅ Recurring Tasks Support
