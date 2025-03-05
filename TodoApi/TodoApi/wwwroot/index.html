@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To-do CRUD</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <h1>To-do CRUD</h1>
+    <button onclick="activateDarkMode()">Dark Mode</button>
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()" id="addForm">
+        <input type="text" id="add-name" placeholder="New to-do">
+        <input type="text" id="add-category" placeholder="Category" />
+        <div>
+            <label for="add-reccuring">Is Reccuring?</label>
+            <input type="checkbox" id="add-reccuring" />
+        </div>
+        <div>
+            <label for="add-reccuring-days">Reoccuring every</label>
+            <input type="number" id="add-reccuring-days" />
+            <span> Days</span>
+        </div>
+        <div>
+            <label for="add-priority">Task Priority</label>
+            <input type="number" id="add-priority" />
+        </div>
+        <div>
+            <label for="add-due-date">Due Date</label>
+            <input type="date" id="add-due-date" placeholder="Due date" />
+        </div>
+
+        <input type="submit" value="Add">
+    </form>
+
+    <h3 id="editFormHeading" style="display:none">Edit</h3>
+    <form action="javascript:void(0);" onsubmit="updateItem()" id="editForm">
+        <input type="hidden" id="edit-id">
+        <div>
+            <label for="edit-isComplete">Is Complete?</label>
+            <input type="checkbox" id="edit-isComplete">
+        </div>
+        <input type="text" id="edit-name">
+        <input type="text" id="edit-category" placeholder="Category" />
+        <div>
+            <label for="edit-reccuring">Is Reccuring?</label>
+            <input type="checkbox" id="edit-reccuring" />
+        </div>
+        <div>
+            <label for="edit-reccuring-days">Reoccuring every</label>
+            <input type="number" id="edit-reccuring-days" />
+            <span> Days</span>
+        </div>
+        <div>
+            <label for="edit-priority">Task Priority</label>
+            <input type="number" id="edit-priority" />
+        </div>
+        <div>
+            <label for="edit-due-date">Due Date</label>
+            <input type="date" id="edit-due-date" placeholder="Due date" min=""/>
+        </div>
+        <input type="submit" value="Save">
+        <a onclick="closeInput()" aria-label="Close" id="close-button">&#10006;</a>
+    </form>
+
+    <div class="container">
+        <p id="counter"></p>
+
+        <div id="filter">
+            <label for="filter-input">Filter</label>
+            <input type="text" id="filter-input" placeholder="Find your to-do" />
+            <input type="button" id="filter-submit" onclick="searchTodo()" value="Search" />
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Is Complete?</th>
+            <th>Name</th>
+            <th>Deadline</th>
+            <th>Category</th>
+            <th>Priority</th>
+            <th>Reccuring?</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="todos"></tbody>
+    </table>
+
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getItems();
+    </script>
+</body>
+</html>
